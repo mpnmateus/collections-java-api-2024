@@ -35,7 +35,7 @@ public class EstoqueProdutos {
         return valorTotalEstoque;
     }
     public Produto obterProdutoMaisCaro(){
-        double valorProdMaisCaro = MIN_VALUE;
+        double valorProdMaisCaro = Double.MIN_VALUE;
         Produto produtoMaisCaro = null;
         if(!estoqueProdutosMap.isEmpty()) {
             for (Produto prod : estoqueProdutosMap.values())
@@ -103,6 +103,9 @@ public class EstoqueProdutos {
 
         // Exibindo o produto com maior valor em estoque (preco * quant)
         System.out.println("O produto com maior em estoque é: " + estoqueProdutos.obterProdutoMaiorQuantidadeValorTotalNoEstoque().getNome());
+
+        // Exibindo o valor total do estoque
+        System.out.println("O valor total do estoque é: " + estoqueProdutos.calcularValorTotalEstoque());
 
     }
 }
