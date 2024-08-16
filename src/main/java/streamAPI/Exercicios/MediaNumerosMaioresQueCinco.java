@@ -8,6 +8,7 @@ import java.util.function.ToIntFunction;
 import java.util.stream.Collectors;
 
 /*
+Desafio 5 - Calcule a média dos números maiores que 5:
 Com a Stream API, calcule a média dos números maiores
  que 5 e exiba o resultado no console.
 */
