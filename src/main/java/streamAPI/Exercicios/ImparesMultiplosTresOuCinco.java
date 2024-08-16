@@ -13,19 +13,25 @@ public class ImparesMultiplosTresOuCinco {
         List<Integer> numeros = Arrays.asList(1, 2, 3, 4, 5,
                 6, 7, 8, 9, 10, 5, 4, 3);
 
-        List<Integer> imparesMultTresOuCinco =
+//        List<Integer> MultTresOuCinco =
+//                numeros.stream()
+//                        .filter(n -> (n % 3 == 0 || n % 5 == 0))
+//                        .distinct()
+//                        .sorted()
+//                        .toList();
+//        System.out.println(MultTresOuCinco);
+
+
+        List<Integer> numerosImpares =
                 numeros.stream()
-                        .filter(n -> (n % 3 == 0 || n % 5 == 0))
-                        .distinct()
-                        .sorted()
-                        .toList();
-        System.out.println(imparesMultTresOuCinco);
+                    .filter(n -> n % 2 != 0)
+                    .distinct() // Remove duplicatas
+                    .sorted() // Ordena em ordem crescente
+                    .toList();
 
-
-        numeros.stream()
-                .filter(n -> (n % 3 == 0 || n % 5 == 0)) // Filtra com base em um predicado (Lambda)
-                .distinct() // Remove duplicatas
-                .sorted() // Ordena em ordem crescente
+        // Exibe os numeros impares multiplos de tres ou cinco
+        numerosImpares.stream()
+                .filter(n -> (n % 3 == 0 || n % 5 == 0)) // Filtra com base em um predicado (usando Lambda)
                 .forEach(n -> System.out.println(n)); // Executa uma ação para cada elemento da stream
     }
 
