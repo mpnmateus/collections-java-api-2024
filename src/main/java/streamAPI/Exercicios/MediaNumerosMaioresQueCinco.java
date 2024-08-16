@@ -17,17 +17,19 @@ public class MediaNumerosMaioresQueCinco {
         List<Integer> numeros = Arrays.asList(1, 2, 3, 4, 5, 6,
                 7, 8, 9, 10, 10, 4, 3);
 
-        Predicate<Integer> verificadorMaiorQueCinco = n -> n > 5;
+        //Predicate<Integer> verificadorMaiorQueCinco = n -> n > 5;
 
         List<Integer> listaNumerosMaioresQueCinco =
                 numeros.stream()
-                        .filter(verificadorMaiorQueCinco)
-                        .collect(Collectors.toList());
+                        .filter(n -> n > 5)
+                        .toList();
 
-        BinaryOperator<Integer> somar = (n1, n2) -> n1 + n2;
+
+
+        //BinaryOperator<Integer> somar = (n1, n2) -> n1 + n2;
 
         double resultadoSoma = listaNumerosMaioresQueCinco.stream()
-                .reduce(0, somar);
+                .reduce(0, (n1, n2) -> n1 + n2);
 
         double media = resultadoSoma / listaNumerosMaioresQueCinco.size();
 
